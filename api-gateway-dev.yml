@@ -1,0 +1,74 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: attestationservice
+          uri: lb://attestation-service
+          predicates:
+            - Path=/api/attestation/**
+        - id: conventionservice
+          uri: lb://convention-service
+          predicates:
+            - Path=/api/convention/**
+        - id: deanservice
+          uri: lb://dean-service
+          predicates:
+            - Path=/api/dean/**
+        - id: evaluation-service
+          uri: lb://evaluation-service
+          predicates:
+            - Path=/api/evaluation/**
+        - id: financeservice
+          uri: lb://finance-service
+          predicates:
+            - Path=/api/finance/**
+        - id: institutionservice
+          uri: lb://institution-service
+          predicates:
+            - Path=/api/institution/**
+        - id: supervisionservice
+          uri: lb://supervision-service
+          predicates:
+            - Path=/api/supervision/**
+        - id: internshipreportservice
+          uri: lb://internship-report-service
+          predicates:
+            - Path=/api/internshipreport/**
+        - id: internshiprequestservice
+          uri: lb://internship-request-service
+          predicates:
+            - Path=/api/internshiprequest/**
+        - id: notificationservice
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/notification/**
+        - id: performancereportservice
+          uri: lb://performance-report-service
+          predicates:
+            - Path=/api/performancereport/**
+        - id: studentservice
+          uri: lb://student-service
+          predicates:
+            - Path=/api/student/**
+
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8081/auth/realms/utic/protocol/openid-connect/certs
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
