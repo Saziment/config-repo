@@ -6,7 +6,7 @@ spring:
     name: attestation-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/internship_db
+    url: jdbc:mysql://localhost:3306/attestation_db
     username: root
     password: 200419721976
     driver-class-name: com.mysql.cj.jdbc.Driver
