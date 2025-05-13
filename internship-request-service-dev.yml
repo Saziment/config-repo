@@ -5,7 +5,7 @@ spring:
   application:
     name: internship-request-service
   datasource:
-    url: jdbc:mysql://localhost:3306/internship_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/internship_request_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
     username: root
     password: 200419721976
   jpa:
