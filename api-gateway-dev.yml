@@ -15,50 +15,74 @@ spring:
           uri: lb://attestation-service
           predicates:
             - Path=/api/attestation/**
+            filters:
+            - StripPrefix=1
         - id: conventionservice
           uri: lb://convention-service
           predicates:
             - Path=/api/convention/**
+            filters:
+            - StripPrefix=1
         - id: deanservice
           uri: lb://dean-service
           predicates:
             - Path=/api/dean/**
+            filters:
+            - StripPrefix=1
         - id: evaluation-service
           uri: lb://evaluation-service
           predicates:
             - Path=/api/evaluation/**
+            filters:
+            - StripPrefix=1
         - id: financeservice
           uri: lb://finance-service
           predicates:
             - Path=/api/finance/**
+            filters:
+            - StripPrefix=1
         - id: institutionservice
           uri: lb://institution-service
           predicates:
             - Path=/api/institution/**
+            filters:
+            - StripPrefix=1
         - id: supervisionservice
           uri: lb://supervision-service
           predicates:
             - Path=/api/supervision/**
+            filters:
+            - StripPrefix=1
         - id: internshipreportservice
           uri: lb://internship-report-service
           predicates:
             - Path=/api/internshipreport/**
+            filters:
+            - StripPrefix=1
         - id: internshiprequestservice
           uri: lb://internship-request-service
           predicates:
             - Path=/api/internshiprequest/**
+            filters:
+            - StripPrefix=1
         - id: notificationservice
           uri: lb://notification-service
           predicates:
             - Path=/api/notification/**
+            filters:
+            - StripPrefix=1
         - id: performancereportservice
           uri: lb://performance-report-service
           predicates:
             - Path=/api/performancereport/**
+            filters:
+            - StripPrefix=1
         - id: studentservice
           uri: lb://student-service
           predicates:
             - Path=/api/student/**
+            filters:
+            - StripPrefix=1
 
 
   security:
